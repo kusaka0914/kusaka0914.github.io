@@ -24,8 +24,11 @@ document.querySelectorAll("[data-image]").forEach((slot) => {
   const image = new Image();
   image.src = slot.dataset.image;
   image.alt = slot.dataset.alt || "ゲーム画面";
-  image.loading = "lazy";
-  image.onload = () => { slot.replaceChildren(image); slot.classList.add("has-image"); };
+  image.onload = () => {
+    image.loading = slot.closest(".hero") ? "eager" : "lazy";
+    slot.replaceChildren(image);
+    slot.classList.add("has-image");
+  };
 });
 
 const gameTitle = document.querySelector("[data-game-title]");

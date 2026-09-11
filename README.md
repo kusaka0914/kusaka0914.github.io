@@ -11,11 +11,11 @@ GitHub Pages 用の依存関係なしで動く静的ポートフォリオです�
 
 ## 画像の差し替え
 
-以下の名前でゲームの実スクリーンショットを追加すると差し替えやすい構成です。現在は、画像未提供の箇所に落ち着いたプレースホルダーを表示します。
+メイン画像とタイトルロゴは配置済みです。未提供の画像には落ち着いたプレースホルダーを表示します。
 
 ```text
+assets/images/hero.png                         # 配置済み・メイン画像
 assets/images/slimes-space-travel-logo.png
-assets/images/feature-planet.jpg
 assets/images/feature-split.jpg
 assets/images/feature-two-player.jpg
 assets/images/sky-regalia.jpg
@@ -23,7 +23,7 @@ assets/images/slimes-sky-travel.jpg
 assets/images/og-image.jpg
 ```
 
-追加した画像を表示するには、`index.html` 内の対応する `media-placeholder` を `img` 要素に置き換えてください。リンク先は `script.js` 冒頭の `links` オブジェクトだけを編集します。未設定のリンクは誤って遷移しないよう無効化されます。
+上記の名前で画像を置くと自動的にプレースホルダーから差し替わります。リンク先は `script.js` 冒頭の `links` オブジェクトだけを編集します。未設定のリンクは誤って遷移しないよう無効化されます。
 
 ## GitHub Pages で公開する
 
@@ -33,6 +33,4 @@ assets/images/og-image.jpg
 4. ブランチを `main`（または公開するブランチ）、フォルダを `/(root)` にして Save します。
 5. 数分後に `https://<username>.github.io/<repository-name>/` で確認します。ユーザーサイト用リポジトリを `<username>.github.io` にした場合は `https://<username>.github.io/` です。
 
-公開前に、`script.js` の URL とメールアドレス、必要な作品画像、`index.html` の OGP 画像 URL を設定してください。
-assets/images/hero.jpg
-assets/images/slimes-space-travel-main.jpg
+公開前に、`script.js` の URLとメールアドレス、必要な作品画像、`index.html` の OGP画像URLを設定してください。
