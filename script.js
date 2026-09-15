@@ -1,7 +1,7 @@
 /* Update every public destination here. Empty values intentionally remain inactive. */
 const links = {
   github: "",
-  gameplay: "",
+  gameplayVideo: "",
   itch: "",
   email: "",
   skyRegalia: "",
@@ -31,14 +31,13 @@ document.querySelectorAll("[data-image]").forEach((slot) => {
   };
 });
 
-const gameTitle = document.querySelector("[data-game-title]");
 const logo = new Image();
 logo.src = "assets/images/slimes-space-travel-logo.png";
 logo.alt = "Slime's Space Travel";
 logo.onload = () => {
   logo.className = "game-logo";
-  gameTitle.replaceChildren(logo.cloneNode());
-  document.querySelector("[data-hero-title]").replaceChildren(logo.cloneNode());
+  const heroTitle = document.querySelector("[data-hero-title]");
+  if (heroTitle) heroTitle.replaceChildren(logo.cloneNode());
 };
 
 const menuButton = document.querySelector(".menu-toggle");
