@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <path d="M17 52h30" stroke="#48d8ff" stroke-width="3" stroke-linecap="round" opacity=".75"/>
+  <text x="32" y="20" fill="#d49cff" font-family="sans-serif" font-size="12" font-weight="700" text-anchor="middle">かん</text>
+  <text x="32" y="47" fill="#e8f8ff" font-family="sans-serif" font-size="31" font-weight="700" text-anchor="middle">漢</text>
+</svg>

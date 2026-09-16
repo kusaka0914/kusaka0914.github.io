@@ -1,9 +1,10 @@
 /* Update every public destination here. Empty values intentionally remain inactive. */
 const links = {
-  github: "",
-  gameplayVideo: "",
-  itch: "",
-  email: "",
+  gameGithub: "https://github.com/kusaka0914/SlimesSpaceTravel",
+  github: "https://github.com/kusaka0914",
+  gameplayVideo: "https://youtu.be/shC_BbZxERA",
+  itch: "https://kusaka0914.itch.io/slimesspacetravel",
+  email: "mailto:takumi.090414528@gmail.com",
   skyRegalia: "",
   skyTravel: ""
 };
@@ -13,10 +14,12 @@ document.querySelectorAll("[data-link]").forEach((element) => {
   if (!url) {
     element.removeAttribute("href");
     element.setAttribute("aria-disabled", "true");
-    element.title = "公開前に script.js の links を設定してください";
+    element.title = "作品ページを準備中です";
     element.classList.add("is-disabled");
   } else {
     element.href = url;
+    element.removeAttribute("aria-disabled");
+    element.classList.remove("is-disabled");
   }
 });
 
@@ -50,6 +53,24 @@ navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click"
   navigation.classList.remove("open");
   menuButton.setAttribute("aria-expanded", "false");
 }));
+
+// Keep header, footer, and back-to-top navigation consistent, including keyboard focus.
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  const hash = link.getAttribute("href");
+  const target = hash.length > 1 ? document.getElementById(hash.slice(1)) : null;
+  if (!target) return;
+  link.addEventListener("click", (event) => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button > 0) return;
+    event.preventDefault();
+    if (window.location.hash !== hash) window.history.pushState(null, "", hash);
+    target.setAttribute("tabindex", "-1");
+    target.focus({ preventScroll: true });
+    target.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+      block: "start"
+    });
+  });
+});
 
 const revealObserver = new IntersectionObserver((entries) => entries.forEach((entry) => {
   if (entry.isIntersecting) { entry.target.classList.add("visible"); revealObserver.unobserve(entry.target); }
