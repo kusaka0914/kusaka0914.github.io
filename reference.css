@@ -70,6 +70,14 @@ body { position: relative; isolation: isolate; background: #020818; }
 .event-kind { margin: 0; color: #b8c9e5; font-size: 14px; }
 .event-status { position: absolute; right: 16px; bottom: 14px; padding: 3px 8px; border: 1px solid #5acfff80; border-radius: 999px; color: #8ee6ff; font-size: 12px; line-height: 1; }
 .event-status.planned { border-color: #d77bff80; color: #e2a4ff; }
+.tgs-highlight { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 24px; margin-top: 16px; padding: 27px 30px; overflow: hidden; border: 1px solid #77caff; border-radius: 14px; background: radial-gradient(circle at 88% 5%, #3d5bca54, transparent 33%), linear-gradient(115deg, #0b2351f2, #080e32ed 70%, #190d3ee8); box-shadow: inset 0 0 32px #5a9eff20, 0 0 16px #53adff2e; }
+.tgs-highlight::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: linear-gradient(#51d9ff, #b47aff); box-shadow: 0 0 16px #70bfff; }
+.tgs-highlight-copy { position: relative; z-index: 1; }
+.tgs-eyebrow { margin: 0 0 8px; color: #8fe8ff; font-size: 12px; font-weight: 750; letter-spacing: .16em; }
+.tgs-eyebrow span { color: #c89cff; }
+.tgs-highlight h3 { margin: 0 0 10px; color: #fff; font-size: clamp(20px, 2vw, 28px); line-height: 1.4; text-shadow: 0 0 18px #737aff70; }
+.tgs-highlight-copy > p:last-child { max-width: 790px; margin: 0; color: #dbeaff; font-size: 15px; line-height: 1.75; }
+.tgs-report-link { position: relative; z-index: 1; flex: 0 0 auto; align-self: end; border-color: #8ccfff; background: #0a2c5cc9; font-size: 14px; }
 .work-card { grid-template-columns: 43% 57%; min-height: 195px; padding: 8px; }
 .work-card .media-placeholder { min-height: 180px; border: 1px solid #639ade70; border-radius: 8px; }
 .work-video { min-height: 180px; overflow: hidden; border: 1px solid #639ade70; border-radius: 8px; background: #020817; }
@@ -77,8 +85,14 @@ body { position: relative; isolation: isolate; background: #020818; }
 .work-card-content { position: relative; padding: 4px 15px 3px 20px; }
 .work-card h3 { order: -1; margin: 0 0 8px; font-size: clamp(20px, 2vw, 28px); }
 .work-card-content > p:not(.project-tags) { font-size: 15px; line-height: 1.65; }
+.work-card-content > p.work-role { margin-top: 9px; padding-left: 10px; border-left: 2px solid #79cfff; color: #c9ddfa; font-size: 13px; line-height: 1.6; }
+.work-role strong { color: #8fe8ff; }
 .work-card-content .project-tags { order: 2; margin-top: auto; padding-top: 12px; }
 .project-tags span { font-size: 12px; padding: 2px 6px; }
+.project-tags .production-tag { color: #f1d9ff; border-color: #ba79ee; background: #49216d8c; }
+.work-repository { order: 3; display: inline-flex; align-items: center; gap: 7px; margin-top: 10px; padding: 5px 10px; border: 1px solid #7bace2a8; border-radius: 6px; background: #0c2854b8; color: #eff7ff; font-size: 12px; font-weight: 700; line-height: 1.4; text-decoration: none; transition: border-color .2s, background .2s; }
+.work-repository:hover { border-color: #a8e8ff; background: #1c4478; }
+.work-repository img { width: 16px; height: 16px; filter: invert(1); }
 .skill-list .skill-text-only { color: #e7efff; font-size: 1rem; letter-spacing: .02em; }
 .work-card .text-link { position: absolute; right: 2px; bottom: 1px; width: 32px; height: 32px; border: 1px solid #9cddff; border-radius: 50%; font-size: 0; padding: 0; display: grid; place-items: center; box-shadow: 0 0 9px #49bfff40; }
 .work-card .text-link span { font-size: 22px; }
@@ -168,6 +182,10 @@ footer { position: relative; z-index: 1; }
   .technical .section-title { font-size: 24px; margin-left: 8px; }
   .other-grid { grid-template-columns: 1fr; }
   .event-grid { grid-template-columns: 1fr; }
+  .tgs-highlight { grid-template-columns: 1fr; gap: 18px; padding: 22px 20px; }
+  .tgs-eyebrow { font-size: 10px; letter-spacing: .08em; }
+  .tgs-highlight-copy > p:last-child { font-size: 14px; }
+  .tgs-report-link { justify-self: start; width: auto; padding-inline: 16px; }
   .work-card { grid-template-columns: 39% 61%; }
   .work-video, .work-video video { min-height: 180px; }
   .work-card h3 { font-size: 19px; }
